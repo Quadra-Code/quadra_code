@@ -1,0 +1,24 @@
+// import navbar style
+@import './sass/sections/nav-bar';
+// import global-rules style
+@import './sass/layout/global-rules';
+// import colors style
+@import './sass/variables/colors' ;
+// import landing style
+@import './sass/sections/landing.scss' ;
+// import services style
+@import './sass/sections/services' ;
+// import about us style
+@import './sass/sections/aboutUs' ;
+* {
+  margin :0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background-color:$main_color;
+  overflow-x: hidden;
+  color: #fff;
+}
