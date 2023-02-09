@@ -9,6 +9,29 @@
     font-weight: 700;
     margin-bottom: 20px;
     color: $second_mainColor;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: -5%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $Darkblue_color;
+      animation-name: move-bubble;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      width: 130px;
+      height: 3px;
+      background-color: $Darkblue_color;
+    }
   }
   .servicer-content {
     margin: 40px 0;

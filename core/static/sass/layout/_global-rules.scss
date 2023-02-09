@@ -1,2 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Titillium+Web:wght@200;300;400;600&display=swap');
-
+@keyframes move-bubble {
+  0% {
+    left: 20%;
+  }
+  50% {
+    left: 70%;
+  }
+  100% {
+    left: 20%;
+  }
+}
