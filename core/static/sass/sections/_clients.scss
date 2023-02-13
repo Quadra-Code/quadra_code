@@ -1,0 +1,62 @@
+.swiper-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:50px 20px ;
+  h2{
+    font-size: 35px;
+    color: $second_mainColor;
+    text-align: center;
+    position: relative;
+    width: max-content;
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: -5%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $Darkblue_color;
+      animation-name: move-bubble;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0%;
+      width: 100px;
+      height: 3px;
+      background-color: $Darkblue_color;
+    }
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      .client-logo {
+        // display: block;
+        width: 300px;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .swiper-pagination-bullet {
+      background-color: $second_mainColor;
+    }
+    .swiper-pagination-bullet-active { 
+      background-color: $logo_color;
+    }
+  }
+}
+
+

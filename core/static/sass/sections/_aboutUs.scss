@@ -7,7 +7,7 @@
   &>img {
     z-index: -1;
     width: 100%;
-    background-size: cover;
+    object-fit: cover;
     filter: blur(2px);
     grid-area: overlap;
   }
@@ -126,11 +126,6 @@
           }
         }
         .features-container {
-          // display: grid;
-          // grid-template-columns: auto auto auto ;
-          // grid-template-rows: auto auto ;
-          // column-gap: 20px;
-          // row-gap: 20px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -180,7 +175,7 @@
                   font-size: 20px;
                 }
                 .fa-linkedin {
-                  color: rgb(0, 68, 255);
+                  color: rgb(0, 52, 150);
                 }
                 .fa-envelope {
                   color: rgb(177, 3, 3);
