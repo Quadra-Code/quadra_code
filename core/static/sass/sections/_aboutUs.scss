@@ -4,9 +4,10 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "overlap";
+  background-color: #003d57;
   &>img {
     z-index: -1;
-    width: 100%;
+    width: 0%;
     object-fit: cover;
     filter: blur(2px);
     grid-area: overlap;
@@ -18,9 +19,19 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding:65px;
+    @include breakpoint(medium) {
+      padding: 40px;
+    }
+    @include breakpoint(mobile) {
+      padding: 20px;
+    }
     h2 {
       font-size: 60px;
+      @include breakpoint(medium) {
+        margin-top: 25px;
+        font-size: 50px;
+      }
       position: relative;
       &::before{
         content: "";
@@ -29,11 +40,15 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: $Darkblue_color;
+        // background-color: $Darkblue_color;
+        background-color: $second_mainColor;
         animation-name: move-bubble;
         animation-duration: 3.5s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
+        @include breakpoint(medium) {
+          bottom:7%;
+        }
       }
       &::after {
         content: "";
@@ -42,7 +57,11 @@
         left: 15%;
         width: 150px;
         height: 3px;
-        background-color: $Darkblue_color;
+        // background-color: $Darkblue_color;
+        background-color: $second_mainColor;
+        @include breakpoint(medium) {
+          width: 130px;
+        }
       }
     }
     .aboutUs-list {
@@ -50,9 +69,26 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 20px 0;
-      perspective: 10px;
+      margin:20px 0;
+      @include breakpoint(medium) {
+        margin:20px 0;
+      }  
+      @include breakpoint(mobile) {
+        justify-content: flex-start;
+      }  
+      // perspective: 10px;
       .aboutUs-listCol {
+        @include breakpoint(medium) {
+          padding: 10px 15px;
+          font-size: 18px;
+          width: 200px;
+        }  
+        @include breakpoint(mobile) {
+          padding: 25px;
+          font-size: 22px;
+          width: 300px;
+          margin-bottom:45px;
+        }    
         position: relative;
         background-color: rgba(0, 0, 0, 0.829);
         padding: 25px 25px;
@@ -80,6 +116,9 @@
           bottom: -20px;
           left: 45%;
           transition: .4s all ease-in-out;
+          @include breakpoint(medium) {
+            left: 42%;
+          }  
         }
         &:hover:after{
           transition: .4s all ease-in-out;
@@ -94,12 +133,14 @@
       justify-content: center;
       align-items: flex-start;
       width: 100%;
-      margin-top: 90px;
+      margin-top: 30px;
+      @include breakpoint (medium) {
+        margin-top: 10px;
+      }
       .col {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: -30px;
         // color: $main_color;
         color: $second_mainColor;
         .header {
@@ -107,8 +148,15 @@
           font-weight: bold;
           margin-bottom: 15px;
           position: relative;
+          @include breakpoint (medium) {
+            margin-bottom: 0px;
+            font-size: 30px;
+          }
           &::before {
             content: "";
+            @include breakpoint (medium) {
+              border-width: 15px;
+            }
             position: absolute;
             left: -10%;
             top: 25%;
@@ -132,10 +180,16 @@
           flex-wrap: wrap;
           width: 100%;
           .features {
+            @include breakpoint (medium) {
+              padding: 30px 15px 15px 15px;
+            }
+            @include breakpoint (mobile) {
+              margin-bottom: 25px;
+            }
             position: relative;
             margin-left: 20px;
             background-color: $second_mainColor;
-            background-color: #faebd7cc;
+            background-color: #faebd7;
             padding: 40px 25px 25px 25px;
             border-radius: 8px;
             display: flex;
@@ -152,6 +206,10 @@
               background-color: $Darkblue_color;
             }
             img{
+              @include breakpoint (medium) {
+                width: 150px;
+                height: 150px;
+              }
               border-radius: 50%;
               width: 180px;
               height: 180px;

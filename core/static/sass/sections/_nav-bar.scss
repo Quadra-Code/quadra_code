@@ -1,7 +1,14 @@
 @import '../variables/colors' ;
 header  {
+  @include breakpoint (mobile) {
+    width: max-content;
+    background-color:rgba(0, 0, 0, 0.445);
+    flex-direction: column;
+    padding: 15px 5px;
+    top: 10%;
+    left: 0;
+  }
   width: 100%;
-  // background-color:$second_mainColor;
   background-color:$main_color;
   display: flex;
   align-items: center;
@@ -10,16 +17,53 @@ header  {
   position: fixed;
   top: 0;
   z-index:9;
+  .logo {
+    .mobile-screens{
+      @include breakpoint(mobile){
+        width: 50px !important;
+      }
+    }
+    .all-screens{
+      @include breakpoint(notMobile){
+        width: 250px !important;
+      }
+      @include breakpoint(mobile){
+        width: 0 !important;
+      }
+    }
+  }
   .nav-links{
     width: 60%;
     display: flex;
     justify-content: center;
+    .mobile-links {
+      display: none;
+      @include breakpoint(mobile){
+        display: flex;
+      }
+    }
+    .fullScreen-links {
+      @include breakpoint(mobile){
+        display: none;
+      }
+    }
     ul {
       display: flex;
       justify-content: space-evenly;
       list-style: none;
       width: 100%;
+      @include breakpoint(mobile) {
+        flex-direction: column;
+      }
+      li {
+        @include breakpoint(mobile) {
+          margin-bottom: 20px;
+        }
+      }
       a {
+        @include breakpoint(mobile) {
+          // display: flex;
+        }
         text-decoration: none;
         color: $main_color;
         font-weight: 700;

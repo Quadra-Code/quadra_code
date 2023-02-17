@@ -1,3 +1,4 @@
+@use './sass/helpers/mixins' as * ;
 // import navbar style
 @import './sass/sections/nav-bar';
 // import global-rules style
@@ -14,15 +15,28 @@
 @import './sass/sections/clients' ;
 // import footer style
 @import './sass/sections/footer' ;
+// import mixin style
 * {
   margin :0;
   box-sizing: border-box;
   padding: 0;
   font-family: 'Cairo', sans-serif;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   background-color:$main_color;
   overflow-x: hidden;
   color: #fff;
+}
+.reveal {
+  position: relative;
+  transform: translateY(15px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
