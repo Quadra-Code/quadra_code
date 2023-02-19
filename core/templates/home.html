@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
   <main>
@@ -22,53 +23,53 @@
         <img src="../static/NEW QC/لوجو qc-12.png" alt="" class="all-screens" style="width:250px;">
       </div>
       <div class="nav-links">
-        <ul class="mobile-links">
+        <!-- <ul class="mobile-links">
           <li>
-            <a href="#home" class="active"><i class="fa-solid fa-igloo"></i></a>
+            <a href="#home" class="header_link active"><i class="fa-solid fa-igloo"></i></a>
           </li>
           <li>
-            <a href="#services"><i class="fa-regular fa-bell"></i></a>
+            <a href="#services" class="header_link"><i class="fa-regular fa-bell"></i></a>
           </li>
           <li>
-            <a href="#aboutus"><i class="fa-solid fa-people-group"></i></a>
+            <a href="#aboutus" class="header_link"><i class="fa-solid fa-people-group"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fa-solid fa-store"></i></a>
+            <a href="#" class="header_link"><i class="fa-solid fa-store"></i></a>
             <i class="fa-solid fa-chevron-down" style="font-size: 14px;"></i>
           </li>
           <li>
-            <a href="#contact"><i class="fa-solid fa-phone-flip"></i></a>
+            <a href="#contact" class="header_link"><i class="fa-solid fa-phone-flip"></i></a>
           </li>
-        </ul>
+        </ul> -->
         <ul class="fullScreen-links">
           <li>
-            <a  href="#home" class="active">Home</a>
+            <a  href="#home" class="header_link active">Home</a>
           </li>
           <li>
-            <a href="#services">Services</a>
+            <a href="#services" class="header_link">Services</a>
           </li>
           <li>
-            <a href="#aboutus">About Us</a>
+            <a href="#aboutus" class="header_link">About Us</a>
           </li>
           <li>
-            <a href="#">Products</a>
+            <a href="#" class="header_link">Products</a>
             <i class="fa-solid fa-chevron-down" style="font-size: 14px;"></i>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="header_link">Contact</a>
           </li>
         </ul>
       </div>
     </header>
-    <section id="home" class="landing-container reveal">
+    <section id="home" class="landing-container">
       <img src="../static/NEW QC/New folder/MPG-MostPopularOnlineMastersDegrees-Body13.jpg" alt="">
       <div class="landing-content">
-        <span>10 years of experience</span>
-        <h2>Commercial solution & fixing consulting</h2>
-        <span>we are professional man</span>
+        <span class="landingRe1">10 years of experience</span>
+        <h2 class="landingRe2">Commercial solution & fixing consulting</h2>
+        <span class="landingRe3">we are professional man</span>
       </div>
     </section>
-    <section id="services" class="services-container reveal">
+    <section id="services" class="services-container">
       <h2 class="sec-label">Our services</h2>
       <div class="servicer-content">
         <div class="col">
@@ -101,7 +102,7 @@
         </div>
       </div>
     </section>
-    <section id="aboutus" class="aboutUs-container reveal">
+    <section id="aboutus" class="aboutUs-container">
       <img src="../static/NEW QC/New folder/14649137_SL_0210121_40570_75.jpg" alt="">
       <div class="aboutUs-content">
         <h2 class="sec-label">About us</h2>
@@ -314,7 +315,7 @@
         </div>
       </div>
     </section>
-    <section class="swiper-section reveal">
+    <div class="swiper-section reveal">
       <h2>Clients</h2>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -333,8 +334,8 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
-    </section>
-    <footer id="contact">
+    </div>
+    <section class="footer" id="contact">
       <div class="footer-container">
         <!-- <div class="backlayer">
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="2000" height="560" preserveAspectRatio="none" viewBox="0 0 2000 560">
@@ -391,7 +392,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </section>
     <div class="Copyright-cont">
       <p>Copyright ©<a href="#"> 2022 QUADRACODE.</a> All Rights Reserved.</p>  </div>
   </main>
@@ -421,7 +422,7 @@
       });
     }
   </script>
-  <script>
+  <!-- <script>
     window.addEventListener('scroll',reveal);
     function reveal() {
       var reveals =document.querySelectorAll('.reveal');
@@ -436,6 +437,59 @@
         }
       }
     }
+  </script> -->
+  <!-- <script>
+    let header_link = document.querySelectorAll('.header_link') ;
+    header_link.forEach(element=> {
+      element.addEventListener('click' , function(){
+        header_link.forEach(one=> one.classList.remove('active'));
+        this.classList.add('active');
+      })
+    });
+  </script> -->
+  <script>
+    var sections = document.querySelectorAll('section');
+    onscroll= function (){
+      var scrollPosition = document.documentElement.scrollTop;
+      console.log(scrollPosition)
+      sections.forEach( section => {
+        if (
+          scrollPosition >= section.offsetTop - section.offsetHeight*0.5 
+          && scrollPosition < section.offsetTop + section.offsetHeight- section.offsetHeight*0.25 )
+          {
+            var currentId = section.attributes.id.value;
+            removeAllActiveClasses();
+            addActiveClass(currentId);
+            console.log("yes")
+          }
+        
+      })
+    }
+    var removeAllActiveClasses = function () {
+      document.querySelectorAll('.header_link').forEach( el => {
+        el.classList.remove('active');
+        console.log('remove');
+      })
+    }
+    var addActiveClass = function(id) {
+      console.log(id)
+      var selector = `.header_link[href="#${id}"]`;
+      console.log(selector);
+      document.querySelector(selector).classList.add('active');
+    }
+  </script>
+  <script>
+    ScrollReveal({ 
+      reset: true ,
+      distance:'60px',
+      duration:1500,
+      delay:400,
+    });
+    ScrollReveal().reveal('.servicer-content .col', { delay: 50, origin: 'bottom', interval:'200' });
+    ScrollReveal().reveal('.features-container .features', { delay: 50, origin: 'left', interval:'200' });
+    ScrollReveal().reveal('.landingRe1', { delay: 300, origin: 'top' });
+    ScrollReveal().reveal('.landingRe2', { delay: 200, origin: 'top' });
+    ScrollReveal().reveal('.landingRe3', { delay: 100, origin: 'bottom' });
   </script>
   <script src="../static/js/main.js"></script>
 </body>

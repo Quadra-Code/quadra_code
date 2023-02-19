@@ -59,22 +59,22 @@ header  {
         @include breakpoint(mobile) {
           margin-bottom: 20px;
         }
-      }
-      a {
-        @include breakpoint(mobile) {
-          // display: flex;
-        }
-        text-decoration: none;
-        color: $main_color;
-        font-weight: 700;
-        font-size: 17px;
-        // color: rgba(0, 0, 0, 0.685);
-        color: rgba(255, 255, 255, 0.747);
-        &:hover {
-          color: $blue_color;
-        }
-        &.active {
-          color: $blue_color;
+        .header_link {
+          @include breakpoint(mobile) {
+            // display: flex;
+          }
+          text-decoration: none;
+          color: $main_color;
+          font-weight: 700;
+          font-size: 17px;
+          // color: rgba(0, 0, 0, 0.685);
+          color: rgba(255, 255, 255, 0.747);
+          &:hover {
+            color: $blue_color;
+          }
+          &.active{
+            color: $blue_color;
+          }
         }
       }
     }
