@@ -59,7 +59,7 @@ header  {
         @include breakpoint(mobile) {
           margin-bottom: 20px;
         }
-        .header_link {
+        .header_link, .side_link {
           @include breakpoint(mobile) {
             // display: flex;
           }

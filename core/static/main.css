@@ -81,17 +81,17 @@ header .nav-links ul {
     margin-bottom: 20px;
   }
 }
-header .nav-links ul li .header_link {
+header .nav-links ul li .header_link, header .nav-links ul li .side_link {
   text-decoration: none;
   color: #000;
   font-weight: 700;
   font-size: 17px;
   color: rgba(255, 255, 255, 0.747);
 }
-header .nav-links ul li .header_link:hover {
+header .nav-links ul li .header_link:hover, header .nav-links ul li .side_link:hover {
   color: rgb(91, 157, 243);
 }
-header .nav-links ul li .header_link.active {
+header .nav-links ul li .header_link.active, header .nav-links ul li .side_link.active {
   color: rgb(91, 157, 243);
 }
 
