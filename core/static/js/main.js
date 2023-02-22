@@ -9,19 +9,15 @@ ScrollReveal().reveal('.features-container .features', { delay: 50, origin: 'lef
 ScrollReveal().reveal('.landingRe1', { delay: 300, origin: 'top' });
 ScrollReveal().reveal('.landingRe2', { delay: 200, origin: 'top' });
 ScrollReveal().reveal('.landingRe3', { delay: 100, origin: 'bottom' });
-// ScrollReveal().reveal('.whyRe1', { delay: 200, origin: 'left' });
-// ScrollReveal().reveal('.whyRe2', { delay: 100, origin: 'right' });
-function changeAboutContent(aboutMenu , aboutCont ) {
+function changeAboutContent(aboutMenu) {
+  let aboutUs_list = document.querySelectorAll('.aboutUs-listCol');
   let about_menu = document.querySelector(aboutMenu).attributes.id.value;
-  let about_cont = document.querySelector(aboutCont);
   let aboutUs_Content = document.querySelector('.aboutContent');
-  console.log(aboutUs_Content)
-  console.log(aboutCont)
-  // let about_pro = document.querySelector('.aboutUs-process');
-  // let about_del = document.querySelector('.aboutUs-delivery');
-  // let about_why = document.querySelector('.aboutUs-why');
-  // let about_team = document.querySelector('.aboutUs-ourTeam');
+  for (let i= 0 ; i< aboutUs_list.length; i++ ) {
+    aboutUs_list[i].classList.remove('active');
+  }
   if (about_menu == 'process'){
+    document.querySelector(aboutMenu).classList.add('active');
     aboutUs_Content.innerHTML= `
     <div class="aboutUs-process" id="proCont">
     <img src="../static/NEW QC/New folder/2196475.jpg" alt="">
@@ -60,6 +56,8 @@ function changeAboutContent(aboutMenu , aboutCont ) {
     `
     ScrollReveal().reveal('.features-container .features', { delay: 50, origin: 'left', interval:'200' });
   }else if(about_menu == 'delivery') {
+    document.querySelector(aboutMenu).classList.remove('active');
+    document.querySelector(aboutMenu).classList.add('active');
     aboutUs_Content.innerHTML= `
     <div class="aboutUs-delivery" id="delCont">
     <div class="col">
@@ -97,7 +95,7 @@ function changeAboutContent(aboutMenu , aboutCont ) {
     `
     ScrollReveal().reveal('.features-container .features', { delay: 50, origin: 'left', interval:'200' });
   }else if(about_menu == 'chooseUs') {
-    console.log('hamza')
+    document.querySelector(aboutMenu).classList.add('active');
     aboutUs_Content.innerHTML= `
     <div class="aboutUs-why"  id="chooseCont">
     <div class="col">
@@ -124,12 +122,11 @@ function changeAboutContent(aboutMenu , aboutCont ) {
     </div>
     <img src="../static/NEW QC/New folder/4105836_2171719(1).jpg" alt="">
   </div>
-`
+  `
     ScrollReveal().reveal('.whyRe1', { delay: 200, origin: 'left' });
     ScrollReveal().reveal('.whyRe2', { delay: 100, origin: 'right' });
-
   }else if(about_menu == 'team') {
-    console.log('hamza');
+    document.querySelector(aboutMenu).classList.add('active');
     aboutUs_Content.innerHTML= `
     <div class="aboutUs-ourTeam"  id="teamCont">
     <div class="col">

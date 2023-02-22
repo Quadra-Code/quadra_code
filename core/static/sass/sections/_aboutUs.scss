@@ -4,7 +4,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "overlap";
-  background-color: #003d57;
+  background-color: #0c2029;
+  padding: 20px;
   &>img {
     z-index: -1;
     width: 0%;
@@ -121,6 +122,12 @@
           }  
         }
         &:hover:after{
+          transition: .4s all ease-in-out;
+          // transform: translate3d(0, 10px, 0);
+          transform: translateY(10px);
+          border-color: $Darkblue_color transparent $Darkblue_color transparent;
+        }
+        &.active:after{
           transition: .4s all ease-in-out;
           // transform: translate3d(0, 10px, 0);
           transform: translateY(10px);

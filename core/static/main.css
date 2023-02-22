@@ -275,7 +275,8 @@ a {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "overlap";
-  background-color: #003d57;
+  background-color: #0c2029;
+  padding: 20px;
 }
 .aboutUs-container > img {
   z-index: -1;
@@ -414,6 +415,11 @@ a {
   }
 }
 .aboutUs-container .aboutUs-content .aboutUs-list .aboutUs-listCol:hover:after {
+  transition: 0.4s all ease-in-out;
+  transform: translateY(10px);
+  border-color: rgb(12, 52, 104) transparent rgb(12, 52, 104) transparent;
+}
+.aboutUs-container .aboutUs-content .aboutUs-list .aboutUs-listCol.active:after {
   transition: 0.4s all ease-in-out;
   transform: translateY(10px);
   border-color: rgb(12, 52, 104) transparent rgb(12, 52, 104) transparent;
