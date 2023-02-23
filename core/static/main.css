@@ -102,11 +102,17 @@ a {
 .landing-container {
   position: relative;
   width: 100%;
+  perspective: 200px;
 }
 .landing-container img {
+  transform: translate3d(0, 0, 0);
+  transition: 0.3s all ease-in-out;
   filter: blur(2px);
   background-size: cover;
   width: 100%;
+}
+.landing-container img.reveal {
+  transform: translate3d(0, 0, 10px);
 }
 .landing-container .landing-content {
   position: absolute;
@@ -663,7 +669,7 @@ a {
   margin-top: 90px;
 }
 .aboutUs-container .aboutUs-content .aboutUs-process img {
-  width: 550px;
+  width: 450px;
   height: 280px;
   border-radius: 18px;
   margin-right: 30px;
@@ -671,7 +677,6 @@ a {
 .aboutUs-container .aboutUs-content .aboutUs-process .col {
   display: flex;
   flex-direction: column;
-  margin-top: -30px;
   color: #fff;
 }
 .aboutUs-container .aboutUs-content .aboutUs-process .col .header {

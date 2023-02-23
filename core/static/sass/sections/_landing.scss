@@ -2,10 +2,16 @@ $landing-before:30px ;
 .landing-container {
   position: relative;
   width: 100%;
+  perspective: 200px;
   img {
+    transform: translate3d(0, 0, 0);
+    transition: .3s all ease-in-out;
     filter: blur(2px);
     background-size: cover;
     width: 100%;
+    &.reveal {
+      transform: translate3d(0, 0, 10px);
+    }
   }
   .landing-content {
     position: absolute;

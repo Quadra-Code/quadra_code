@@ -1,3 +1,4 @@
+// main animation
 ScrollReveal({ 
   reset: true ,
   distance:'60px',
@@ -9,6 +10,30 @@ ScrollReveal().reveal('.features-container .features', { delay: 50, origin: 'lef
 ScrollReveal().reveal('.landingRe1', { delay: 300, origin: 'top' });
 ScrollReveal().reveal('.landingRe2', { delay: 200, origin: 'top' });
 ScrollReveal().reveal('.landingRe3', { delay: 100, origin: 'bottom' });
+// main animation 
+
+// landing page 
+let landingPage = document.querySelector('.landing-container img');
+let imgsArray = ['img1' , 'img2', 'img3'] ;
+let revealClass = landingPage.classList.value;
+
+setInterval(()=> {
+  revealClass == '';
+}, 100)
+setInterval (()=> {
+  let randomNumber = Math.floor(Math.random() * imgsArray.length);
+  if (revealClass == ''){
+    console.log('sss')
+    landingPage.classList.add('.reveal');
+  }
+  landingPage.attributes.src.value = '../static/NEW QC/New folder/' + imgsArray[randomNumber] +'.jpg';
+  // landingPage.classList.remove('.reveal');
+}, 3000)
+// landing page 
+
+
+// animation and about us content 
+
 function changeAboutContent(aboutMenu) {
   let aboutUs_list = document.querySelectorAll('.aboutUs-listCol');
   let about_menu = document.querySelector(aboutMenu).attributes.id.value;
@@ -20,7 +45,7 @@ function changeAboutContent(aboutMenu) {
     document.querySelector(aboutMenu).classList.add('active');
     aboutUs_Content.innerHTML= `
     <div class="aboutUs-process" id="proCont">
-    <img src="../static/NEW QC/New folder/2196475.jpg" alt="">
+    <img src="../static/NEW QC/New folder/programmer-concept-illustration_114360-2417.webp" alt="">
     <div class="col">
       <span class="header">Process</span>
       <span>We use the latest tools to manage each task to achieve the best performance.</span>
@@ -90,7 +115,7 @@ function changeAboutContent(aboutMenu) {
         </div>
       </div>
     </div>
-    <img src="../static/NEW QC/New folder/courier-service-g558c2850e_1920.png" alt="">
+    <img src="../static/NEW QC/New folder/preview.jpg" alt="">
   </div>
     `
     ScrollReveal().reveal('.features-container .features', { delay: 50, origin: 'left', interval:'200' });
@@ -232,6 +257,7 @@ function changeAboutContent(aboutMenu) {
     ScrollReveal().reveal('.features-container .features', { delay: 50, origin: 'left', interval:'200' });
   }
 }
+// animation and about us content 
 
 // scroll active class
 
